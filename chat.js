@@ -6,6 +6,10 @@ const http = require("http");
 const http_server= http.createServer(app);
 const moment = require("moment");
 
+app.get("/",(req,res)=>{
+    res.json("hi")
+})
+
 const io = socketio(http_server);
 io.on("connection",(socket)=>{
     socket.on("msg_from_client",(msg)=>{ 
